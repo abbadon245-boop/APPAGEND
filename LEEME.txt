@@ -1,0 +1,39 @@
+MI AGENDA - app instalable (PWA)
+================================
+
+Contenido
+  index.html      la app completa
+  manifest.json   datos de instalación (nombre, colores, íconos)
+  sw.js           hace que funcione sin internet
+  icons/          íconos de la app
+
+IMPORTANTE: una app instalable necesita estar en internet con https://
+(abrir index.html con doble clic funciona, pero no se puede instalar).
+
+PASO 1 - Ponerla en internet (gratis, 2 minutos)
+  Opción A (la más fácil): Netlify Drop
+    1. Entra a https://app.netlify.com/drop
+    2. Arrastra la CARPETA con estos archivos (descomprime el zip primero).
+    3. Te da un enlace https://algo.netlify.app  -> ese es tu app.
+  Opción B: GitHub Pages, Vercel o Cloudflare Pages (suben la misma carpeta).
+
+PASO 2 - Instalarla en el celular
+  Android (Chrome): abre el enlace > menú ⋮ > "Instalar aplicación".
+  iPhone (Safari):  abre el enlace > Compartir > "Agregar a pantalla de inicio".
+  Computadora (Chrome/Edge): ícono de instalar en la barra de direcciones.
+
+PASO 3 - (Opcional) Subirla a Google Play / App Store
+  1. Entra a https://www.pwabuilder.com y pega tu enlace de Paso 1.
+  2. Elige "Package for stores": Android (te da el archivo .aab para Play Store)
+     o iOS (te da un proyecto de Xcode; requiere una Mac).
+  3. Cuentas necesarias: Google Play Console (pago único ~25 USD) y
+     Apple Developer (99 USD al año).
+
+NOTAS
+  - Los datos se guardan en el propio dispositivo (no en la nube). Si cambias de
+    celular, usa Todas > "Guardar respaldo" y luego "Restaurar respaldo".
+  - Los avisos por hora funcionan mientras la app está abierta o en segundo plano
+    reciente. Los avisos con la app totalmente cerrada requieren un servidor de
+    notificaciones push; si los quieres, es una mejora posible.
+  - Si cambias archivos, sube la carpeta de nuevo y cambia VERSION en sw.js
+    (por ejemplo a 'mi-agenda-v2') para que los usuarios reciban la actualización.
